@@ -1,73 +1,53 @@
-# React + TypeScript + Vite
+# Weathy
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Weathy is a half-built frontend project created using a modern React stack. It is primarily intended for experimentation and implementation practice rather than as a complete production-ready application.
 
-Currently, two official plugins are available:
+## Tech Stack
+This project is built with:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Vite  
+- React  
+- TypeScript  
+- shadcn/ui  
+- React Router DOM  
+- TanStack Query  
 
-## React Compiler
+The stack reflects a modern frontend setup focused on performance, type safety, component-driven development, and structured state management.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Project Status
 
-## Expanding the ESLint configuration
+This project is currently incomplete.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+At its present stage, it should be reviewed specifically for the **dark mode implementation** built using `shadcn/ui`.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+No additional features are finalized or production-ready.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Implementation Highlight
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+The dark mode implementation is located in: `src/components/header.tsx`
+
+This file contains the theme toggle logic and the relevant configuration using `shadcn/ui`.
+
+The purpose of this implementation is to demonstrate:
+
+- Theme switching setup
+- Integration of shadcn/ui components
+- Structured component organization using TypeScript and React
+
+## Quick Start
+
+```bash
+# 1. Clone the repo
+git clone https://github.com/your-username/weathy.git
+cd weathy
+
+# 2. Install dependencies
+npm install
+
+# 3. Start development server
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Important Note
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+This repository is currently intended for reviewing the dark mode implementation only. Other parts of the application are incomplete and may change significantly.
