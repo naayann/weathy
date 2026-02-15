@@ -6,7 +6,16 @@ import Layout from "./components/layout"
 import Dashboard from "./pages/dashboard"
 import CityPage from "./pages/city-page"
 
-const queryClient = new QueryClient()
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 5 * 60 * 1000,
+      gcTime: 10 * 60 * 1000,
+      retry: false,
+      refetchOnWindowFocus: false
+    }
+  }
+})
 
 function App() {
   return (
